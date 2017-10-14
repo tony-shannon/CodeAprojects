@@ -1,17 +1,17 @@
 import React from 'react';
 import './SearchBar.css';
 
-const SortByOptions = {
-  'Best_Match': 'best_match',
-  'Highest_Rated': 'rating',
+const sortByOptions = {
+  'Best Match': 'best_match',
+  'Highest Rated': 'rating',
   'Most Reviewed': 'review_count'
 }
 
 class SearchBar extends React.Component {
   renderSortByOptions(){
-    return Object.keys(SortByOptions).map(SortByOption => {
+    return Object.keys(sortByOptions).map(sortByOption => {
       let sortByOptionValue = sortByOptions[sortByOption];
-      <li key={sortByOptionValue}> {SortByOption} </li>
+      return <li key={sortByOptionValue}> {sortByOption} </li>
     }  );
   }
 
