@@ -25,6 +25,8 @@ const Yelp = {
     }).then(response => {
         return response.json();
     }).then(jsonResponse => {
+      console.log('JSR is' + jsonResponse.businesses);
+      //console.log('JSR is' + jsonResponse.businesses[0].name);
       if (jsonResponse.businesses){
         return jsonResponse.businesses.map(business => ({
           id: business.id,
@@ -39,6 +41,7 @@ const Yelp = {
           reviewCount: business.review_count
         }));
       }
+      else { return []; }
     });
   }
 };
