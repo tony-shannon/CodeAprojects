@@ -32,7 +32,8 @@ class SearchBar extends React.Component {
 
  handleSortByChange(sortByOption){
    console.log('sbtv = ' + sortByOption.target.value);
-   this.setState({sortBy: sortByOption}); // this needs work and is from step 7 in Ravenous III
+   //this.setState({sortBy: sortByOption}); // this needs work and is from step 7 in Ravenous III
+  this.setState({ sortBy: sortByOption }, () => console.log(this.state));
  }
 
  handleTermChange(event) {
