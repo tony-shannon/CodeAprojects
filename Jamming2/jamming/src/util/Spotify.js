@@ -1,7 +1,7 @@
 
 let accessToken = '';
 const CLIENT_ID= '1347818ae0c44bada0772cc6a78d40d9';
-const REDIRECT_URI= "http://localhost:3001/";
+const REDIRECT_URI= "http://localhost:3000/";
 
 
 
