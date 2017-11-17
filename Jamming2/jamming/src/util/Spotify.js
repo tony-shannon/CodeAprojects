@@ -32,7 +32,7 @@ let Spotify = {
 
   search(term){
     const accessToken = Spotify.getAccessToken();
-    return fetch(`https://api.spotify.com/v1/search?type=track&q={term}`,
+    return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`,
           {
             headers: {Authorization: `Bearer ${accessToken}`}
           })
@@ -69,9 +69,13 @@ let Spotify = {
     .then(response => response.json())
     .then(jsonResponse => {
       const playlistId = jsonResponse.id;
-      return fetch (`https://api.spotify.com/v1/users/{userId}/playlists/{playlist_id}/tracks`,
-      { headers: headers,
+      return fetch (`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+
+      { 'Content-type': 'application/json',
         method: 'POST',
+        headers: { Authorization: `Bearer ${accessToken}` },
+        //headers: headers,
+        //method: 'POST',
         body: JSON.stringify({ uris: trackURIs })
       }
     );
